@@ -1,0 +1,21 @@
+services:
+  walrus-api:
+    build:
+      context: ./walrus_service
+      dockerfile: Dockerfile
+      args:
+        HTTP_PROXY: http://proxy.example.com:3128
+        HTTPS_PROXY: http://proxy.example.com:3128
+    env_file:
+      - ./walrus_service/.env
+  streamlit:
+    build:
+      context: ./streamlit_service
+      dockerfile: Dockerfile
+      args:
+        HTTP_PROXY:
+        HTTPS_PROXY: 
+    env_file:
+      - ./streamlit_service/.env
+  walrus-db:
+    image: mongo

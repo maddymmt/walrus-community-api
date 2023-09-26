@@ -1,0 +1,12 @@
+services:
+  walrus-api:
+    ports:
+      - "1111:1234"
+    
+  walrus-db:
+    ports:
+      - "1112:12345"
+  
+  streamlit:
+    ports:
+      - "1113:1235"
